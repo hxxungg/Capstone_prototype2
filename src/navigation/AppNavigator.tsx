@@ -21,7 +21,7 @@ function TabIcon({ emoji, label, focused }: { emoji: string; label: string; focu
   );
 }
 
-function MainTabs({ navigation }: any) {
+function MainTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -32,12 +32,11 @@ function MainTabs({ navigation }: any) {
     >
       <Tab.Screen
         name="Home"
+        component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => <TabIcon emoji="🏠" label="홈" focused={focused} />,
         }}
-      >
-        {(props) => <HomeScreen {...props} navigation={navigation} />}
-      </Tab.Screen>
+      />
       <Tab.Screen
         name="StockGame"
         component={StockGameScreen}
